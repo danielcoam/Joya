@@ -27,5 +27,6 @@ namespace Joya.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Bracelet> Bracelets { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Joya.Models.Store> Store { get; set; }
     }
 }
