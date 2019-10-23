@@ -1,0 +1,81 @@
+﻿@using Joya.Models
+
+@model Joya.Models.RingFilterViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div style="display:flex" ;>
+    <div style="flex:auto" ;>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rings[0].Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rings[0].Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rings[0].Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rings[0].Color)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rings[0].SupplierId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rings[0].Size)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rings[0].ImageLocation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rings[0].BusinessName)
+                </th>
+                <th></th>
+            </tr>
+
+            <tbody>
+                @foreach (var item in Model.Rings)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Type)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Color)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SupplierId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Size)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ImageLocation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BusinessName)
+                        </td>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.CatalogNumber">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.CatalogNumber">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.CatalogNumber">Delete</a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
