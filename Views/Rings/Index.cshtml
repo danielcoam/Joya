@@ -5,30 +5,34 @@
 @{
     ViewData["Title"] = "Index";
 }
-    <div  align="center">
-        <h1>Rings Collection</h1>
-        <br />
-        <form asp-controller="Rings" asp-action="Index" method="get">
-            <p>
-                @Html.DropDownList("RingType", (SelectList)Model.Types, "Select Ring Type")
-                @Html.TextBox("SearchString", null,  new { placeholder = "Color" })
-                <input type="submit" value="Filter" />
+    <div style="display:flex">
+        <div style="flex:auto" align="center">
+            <h1>Rings Collection</h1>
+            <br />
+            <form asp-controller="Rings" asp-action="Index" method="get">
+                <p>
+                    @Html.DropDownList("RingType", (SelectList)Model.Types, "Select Ring Type")
+                    @Html.TextBox("SearchString", null, new { placeholder = "Color" })
+                    <input type="submit" value="Filter" />
 
 
-            </p>
-        </form>
+                </p>
+            </form>
+            @if (User.IsInRole("Admin"))
+            {
+                <p>
+                    <a asp-action="Create">Create New</a>
+                </p>
+                <partial name="AdminRingView" />
+            }
+            else
+            {
+                <partial name="UserRingView" />
+
+            }
+        </div>
+        <div class="card" style="justify-content: flex-end">
+            <iframe src="https://www.widgets.investing.com/live-currency-cross-rates?theme=lightTheme&roundedCorners=true&cols=last,changePerc,time&pairs=9687,9723" width="300" height="600" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Powered by <a href="https://www.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=LIVE_CURRENCY_X_RATES&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow">Investing.com</a></div>
+        </div>
     </div>
-@if (User.IsInRole("Admin"))
-{
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
-    <partial name="AdminRingView" />
-}
-else
-{
-    <partial name="UserRingView" />
-
-}
-
 
