@@ -45,11 +45,6 @@
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    // Create dummy data
-    var data = { a: 9, b: 20, c: 30, d: 8, e: 12 }
-
-
-
     $.ajax({
             type: "GET",
             url: "Charts/GetOrders",
@@ -97,9 +92,7 @@
 
 
             }
-            //error: function (msg) {
-            //    $("#result").text(msg);
-            //}
+           
         });
 
 
