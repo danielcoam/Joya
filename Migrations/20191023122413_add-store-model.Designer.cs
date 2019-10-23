@@ -3,14 +3,16 @@ using System;
 using Joya.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Joya.Migrations
 {
     [DbContext(typeof(JoyaDbContext))]
-    partial class JoyaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191023122413_add-store-model")]
+    partial class addstoremodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -119,12 +121,6 @@ namespace Joya.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<decimal>("latitude");
-
-                    b.Property<decimal>("longitude");
-
-                    b.Property<string>("streetName");
 
                     b.HasKey("Id");
 

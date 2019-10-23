@@ -7,14 +7,22 @@ using Microsoft.AspNetCore.Mvc;
 using Joya.Models;
 using System.Net.Http;
 using Newtonsoft.Json;
+using Joya.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Joya.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly JoyaDbContext _context;
+
+        public HomeController(JoyaDbContext context)
         {
-            return View();
+            _context = context;
+        }
+        public async Task<ActionResult> Index()
+        {
+            return View(await _context.Store.ToListAsync());
         }
 
         public IActionResult Privacy()

@@ -1,17 +1,17 @@
-﻿@{
+﻿@model IEnumerable<Joya.Models.Store>
+@{
     ViewBag.Title = "Home Page";
 }
 
 <!--landing page start-->
-
 @*<div id="home">
-    <div class="landing-text">
-        <p class="landingheading1">Welcome to La Joya</p>
-        <p class="landingheading2 d-none d-sm-block">Just As Unforgettable As You </p>
-        <br />
-        <a href="#" class="btn btn-lg btn-outline-light">Tip us here</a>
-    </div>
-</div>*@
+        <div class="landing-text">
+            <p class="landingheading1">Welcome to La Joya</p>
+            <p class="landingheading2 d-none d-sm-block">Just As Unforgettable As You </p>
+            <br />
+            <a href="#" class="btn btn-lg btn-outline-light">Tip us here</a>
+        </div>
+    </div>*@
 
 <div class="container1">
     <video autoplay muted loop id="myVideo">
@@ -25,57 +25,56 @@
 
 
     </div>
-    </div>
+</div>
 
 
 
 <!--landing page end-->
 <!--about session start-->
-
 @*<div class="container-fluid about">
-    <div class="container">
+        <div class="container">
 
-        <div class="row top-heading mt-5">
-            <div class="col-md-12">
-                <p>About Us</p>
+            <div class="row top-heading mt-5">
+                <div class="col-md-12">
+                    <p>About Us</p>
+                </div>
             </div>
+
+            <div class="row mt-5 mb-5">
+                <div class="col-md-4">
+                    <div class="card card1">
+                        <i class="fa fa-coffee" aria-hidden="true"></i>
+                        <div class="card-body">
+                            <div class="card-title">Fresh Coffee</div>
+                            <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card2">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <div class="card-body">
+                            <div class="card-title">On Time</div>
+                            <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card3">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                        <div class="card-body">
+                            <div class="card-title">Free Delivery</div>
+                            <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-
-        <div class="row mt-5 mb-5">
-            <div class="col-md-4">
-                <div class="card card1">
-                    <i class="fa fa-coffee" aria-hidden="true"></i>
-                    <div class="card-body">
-                        <div class="card-title">Fresh Coffee</div>
-                        <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card card2">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                    <div class="card-body">
-                        <div class="card-title">On Time</div>
-                        <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card card3">
-                    <i class="fa fa-truck" aria-hidden="true"></i>
-                    <div class="card-body">
-                        <div class="card-title">Free Delivery</div>
-                        <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</div>*@
+    </div>*@
 
 <!--  about session end-->
 <!--why u come here start-->
@@ -90,7 +89,7 @@
 
         <div class="row mt-4">
             <div class="col-sm-6">
-                 <img src="~/img/1_2.jpg" class="img-fluid hero-img" alt="img2">
+                <img src="~/img/1_2.jpg" class="img-fluid hero-img" alt="img2">
             </div>
 
             <div class="col-sm-6">
@@ -128,57 +127,56 @@
 </div>
 <!--why u come here end-->
 <!--team start-->
-
 @*<div class="container-fluid team mb-5">
-    <div class="container">
+        <div class="container">
 
-        <div class="row top-heading mt-5">
-            <div class="col-md-12">
-                <p>Meet Our Team</p>
-                <h4 class="text-center mb-5">We make the world's best coffee.</h4>
+            <div class="row top-heading mt-5">
+                <div class="col-md-12">
+                    <p>Meet Our Team</p>
+                    <h4 class="text-center mb-5">We make the world's best coffee.</h4>
+                </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-team">
+                        <img class="card-img-top" src="img/team_1.jpg">
+                        <div class="card-body">
+                            <div class="card-title">
+                                Mariano Idleman
+                            </div>
+                            <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card-team">
+                        <img class="card-img-top" src="img/team_2.jpg">
+                        <div class="card-body">
+                            <div class="card-title">
+                                Asi Cohen
+                            </div>
+                            <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card-team">
+                        <img class="card-img-top" src="img/team_3.jpg">
+                        <div class="card-body">
+                            <div class="card-title">
+                                Yuval Semo
+                            </div>
+                            <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card card-team">
-                    <img class="card-img-top" src="img/team_1.jpg">
-                    <div class="card-body">
-                        <div class="card-title">
-                            Mariano Idleman
-                        </div>
-                        <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card card-team">
-                    <img class="card-img-top" src="img/team_2.jpg">
-                    <div class="card-body">
-                        <div class="card-title">
-                            Asi Cohen
-                        </div>
-                        <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card card-team">
-                    <img class="card-img-top" src="img/team_3.jpg">
-                    <div class="card-body">
-                        <div class="card-title">
-                            Yuval Semo
-                        </div>
-                        <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>*@
+    </div>*@
 
 <!--team end-->
 <!--paralalxeffect start-->
@@ -195,46 +193,45 @@
 </div>
 <!--paralalxeffect END-->
 <!--blog start-->
-
 @*<div class="container mb-5">
-    <div class="row top-heading mt-5">
-        <div class="col-md-12">
-            <p>Read Our Blogs To Know Us Better</p>
-        </div>
-    </div>
-
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="card card-blog">
-                <img class="card-img-top img-fluid" src="img/6.jpg">
-                <div class="card-body">
-                    <div class="card-title">Awesome Coffee</div>
-                    <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est recusandae deleniti, maiores laborum similique officia ad aliquam ipsa odio, debitis a quisquam exercitationem eius. Vitae, accusantium! Laudantium repellat, tempora. Autem.<span class="green-text"> learn more...</span></div>
-                </div>
+        <div class="row top-heading mt-5">
+            <div class="col-md-12">
+                <p>Read Our Blogs To Know Us Better</p>
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card card-blog">
-                <img class="card-img-top img-fluid" src="img/7.jpg">
-                <div class="card-body">
-                    <div class="card-title">Friendly Staff</div>
-                    <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est recusandae deleniti, maiores laborum similique officia ad aliquam ipsa odio, debitis a quisquam exercitationem eius. Vitae, accusantium! Laudantium repellat, tempora. Autem.<span class="green-text"> learn more...</span></div>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card card-blog">
+                    <img class="card-img-top img-fluid" src="img/6.jpg">
+                    <div class="card-body">
+                        <div class="card-title">Awesome Coffee</div>
+                        <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est recusandae deleniti, maiores laborum similique officia ad aliquam ipsa odio, debitis a quisquam exercitationem eius. Vitae, accusantium! Laudantium repellat, tempora. Autem.<span class="green-text"> learn more...</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-md-4">
-            <div class="card card-blog">
-                <img class="card-img-top img-fluid" src="img/8.jpg">
-                <div class="card-body">
-                    <div class="card-title">Tasty delecacies </div>
-                    <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est recusandae deleniti, maiores laborum similique officia ad aliquam ipsa odio, debitis a quisquam exercitationem eius. Vitae, accusantium! Laudantium repellat, tempora. Autem.<span class="green-text"> learn more...</span></div>
+            <div class="col-md-4">
+                <div class="card card-blog">
+                    <img class="card-img-top img-fluid" src="img/7.jpg">
+                    <div class="card-body">
+                        <div class="card-title">Friendly Staff</div>
+                        <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est recusandae deleniti, maiores laborum similique officia ad aliquam ipsa odio, debitis a quisquam exercitationem eius. Vitae, accusantium! Laudantium repellat, tempora. Autem.<span class="green-text"> learn more...</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card card-blog">
+                    <img class="card-img-top img-fluid" src="img/8.jpg">
+                    <div class="card-body">
+                        <div class="card-title">Tasty delecacies </div>
+                        <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est recusandae deleniti, maiores laborum similique officia ad aliquam ipsa odio, debitis a quisquam exercitationem eius. Vitae, accusantium! Laudantium repellat, tempora. Autem.<span class="green-text"> learn more...</span></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>*@
+    </div>*@
 <!--  blog end-->
 <!--contact start-->
 
@@ -250,13 +247,13 @@
             <div class="col-md-4">
                 <h4>Address:</h4>
                 <p>
-                    1,Alenbi st.
-                    <br /> Tel Aviv
+                    <br /> Hilton Tel Aviv
+                    <br /> Rishon Lezion
+                    <br /> Bat Yam
                 </p>
                 <br />
-                <p><i class="fa fa-envelope" aria-hidden="true"></i> : shauli.coffee@gmail.com</p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> : danielcoam@gmail.com</p>
                 <p><i class="fa fa-phone" aria-hidden="true"></i> :+972 123-456-890 </p>
-                <p><i class="fa fa-facebook-square" aria-hidden="true"></i> : www.facebook.com/shaulicoffee </p>
                 <p><i class="fa fa-fax" aria-hidden="true"></i> : 123456789</p>
             </div>
 
@@ -270,12 +267,36 @@
                 <p>Friday: 10am to 2pm</p>
 
             </div>
-
             <div class="col-md-4">
-                <iframe src="https://maps.google.com/maps?q=alenbi%201%20tel%20aviv&t=&z=13&ie=UTF8&iwloc=&output=embed" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <div id="map" style="width:400px; height:300px;"></div>
+                <script type="text/javascript">
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 10,
+                        center: new google.maps.LatLng(32.068299, 34.826130),
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    });
+
+                    var infowindow = new google.maps.InfoWindow();
+                </script >
+                @foreach (var item in Model)
+                {
+                    <script type="text/javascript">
+                        console.log('@item.streetName')
+                    var marker = new google.maps.Marker({
+                            position: new google.maps.LatLng('@item.latitude', '@item.longitude'),
+                            map: map
+                        });
+
+                    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                            return function () {
+                                infowindow.setContent('@item.streetName');
+                                infowindow.open(map, marker);
+                            }
+                        })(marker));
+                    </script>
+                }
             </div>
         </div>
-
     </div>
 </div>
 
