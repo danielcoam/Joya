@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewData["Title"] = "Second";
+}
+
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+    .line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 1.5px;
+    }
+</style>
+<h1>Charts</h1>
+<div style="display:flex">
+    <div id="here">
+        <br />
+        <p style="text-align:center">Statistics for products number</p>
+    </div>
+
+</div>
+<script>
+
+    var svg = d3.select("#here").append("svg")
+        .attr("width", 960)
+        .attr("height", 300)
+
+    var margin = { left: 30, right: 30, top: 10, bottom: 20 }
+    var width = svg.attr("width") - margin.left - margin.right;
+    var height = svg.attr("height") - margin.bottom - margin.top;
+
+
+
+    $.ajax({
+        type: "GET",
+        url: "GetPricesByDates",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+              var data = []
+            $.each(result, function (i, j) {
+                var arr = i.split('T')
+                date = arr[0];
+                data.push({"date":date,"a":j })
+               
+            });
+            // set the color scale
+            var x = d3.scaleTime()
+                .rangeRound([0, width]);
+            var x_axis = d3.axisBottom(x);
+
+            var y = d3.scaleLinear()
+                .rangeRound([height, 0]);
+            var y_axis = d3.axisBottom(y);
+            var xFormat = "%d-%b-%Y";;
+            var parseTime = d3.timeParse("%Y-%m-%d");
+
+            x.domain(d3.extent(data, function (d) { return parseTime(d.date); }));
+            y.domain([0,
+                d3.max(data, function (d) {
+                    return d3.max([d.a, d.b, d.c, d.d]);
+                })]);
+
+            var a = function (d) { return d.a };
+
+            var multiline = function (category) {
+                var line = d3.line()
+                    .x(function (d) { return x(parseTime(d.date)); })
+                    .y(function (d) { return y(d[category]); });
+                return line;
+            }
+
+
+
+            var categories = ['a', 'b', 'c', 'd'];
+            //var color = d3.scale.category10();  // escala com 10 cores (category10)
+            var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+            var g = svg.append("g")
+                .attr("transform",
+                    "translate(" + margin.left + "," + margin.top + ")");
+
+            for (i in categories) {
+                var lineFunction = multiline(categories[i]);
+                g.append("path")
+                    .datum(data)
+                    .attr("class", "line")
+                    .style("stroke", color(i))
+                    .attr("d", lineFunction);
+            }
+
+            // Add the X Axis
+            g.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x).tickFormat(d3.timeFormat(xFormat)));
+
+            // Add the Y Axis
+            g.append("g")
+                .call(d3.axisLeft(y));
+        }
+    });
+
+
+</script>
+

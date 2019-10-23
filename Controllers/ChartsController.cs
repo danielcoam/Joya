@@ -22,16 +22,40 @@ namespace Joya.Controllers
         {
             return View();
         }
-
-        public IDictionary<string,int> GetOrders()
+        public IActionResult Second()
         {
-            var rings = from order in _context.Orders
-                        join ring in _context.Rings on order.RingId equals ring.CatalogNumber
-                        select new { RingName = ring.Name, Count = order.Count };
-                        
+            return View();
+        }
+
+        public IDictionary<string,decimal> GetOrders()
+        {
+                    
+            var total = from order in _context.Orders
+                        group order by order.RingId into ordersGroup
+                        join ring in _context.Rings on ordersGroup.FirstOrDefault().RingId equals ring.CatalogNumber
+                        select new
+                        {
+                            totalSum = ordersGroup.Sum(x => x.TotalPrice),
+                            RingName = ring.Name
+                        };
 
 
-            return rings.ToDictionary(x => x.RingName, x => x.Count);
+            return total.ToDictionary(x => x.RingName, x => x.totalSum);
+        }
+        public IDictionary<DateTime, decimal> GetPricesByDates()
+        {
+            var q = from order in _context.Orders
+                    group order by order.CreationDate.Date into g
+                    select new
+                    {
+                        iCount = g.Sum(x=>x.TotalPrice),
+                        strDate = g.Key
+                    };
+
+
+
+
+            return q.ToDictionary(x => x.strDate.Date, x => x.iCount);
         }
     }
 }
