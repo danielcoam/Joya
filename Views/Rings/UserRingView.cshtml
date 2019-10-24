@@ -8,7 +8,8 @@
 <style>
     .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        max-width: 300px;
+        width: 300px;
+        height:500px;
         margin: auto;
         text-align: center;
         font-family: arial;
@@ -40,7 +41,7 @@
         @foreach (var item in Model.Rings)
         {
             <div class="card">
-                <img src=@Html.DisplayFor(modelItem => item.ImageLocation) alt=@Html.DisplayFor(modelItem => item.Name) style="width:100%">
+                <img src=@Html.DisplayFor(modelItem => item.ImageLocation) alt=@Html.DisplayFor(modelItem => item.Name) style="width:298px;height:298px">
                 <h1>  @Html.DisplayFor(modelItem => item.Name)</h1>
                 <p class="price"> @Html.DisplayFor(modelItem => item.Price) $</p>
                 <p> A @Html.DisplayFor(modelItem => item.Type) Ring, Size - @Html.DisplayFor(modelItem => item.Size) ,Color -  @Html.DisplayFor(modelItem => item.Color)</p>
